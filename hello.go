@@ -1,11 +1,12 @@
 package main
 
-import "github.com/go-martini/martini"
+import (
+	"github.com/go-martini/martini"
+)
 
 func main() {
-    m := martini.Classic()
-    m.Get("/", func() string {
-        return "Hello from AWS!"
-    })
-    m.Run()
+	m := martini.Classic()
+	static := martini.Static("public", martini.StaticOptions{IndexFile: "index.html"})
+	m.Use(static)
+	m.Run()
 }

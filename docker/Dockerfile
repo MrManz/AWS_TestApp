@@ -1,4 +1,4 @@
-FROM golang:1.8.3 as builder
+FROM golang:1.11.2 as builder
 RUN go get github.com/MrManz/AWS_TestApp
 RUN go get github.com/go-martini/martini
 WORKDIR /go/src/github.com/MrManz/AWS_TestApp
